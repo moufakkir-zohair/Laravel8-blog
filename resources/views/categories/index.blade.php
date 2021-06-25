@@ -6,7 +6,7 @@
       <form   action="{{ route('categories.create') }}">
         <button class="btn btn-primary" type="submit"  > Add category </button>
       </form>
-
+      <br>
      @forelse ($categories as $category)
 
           <li class="list-group-item">
@@ -26,6 +26,7 @@
             </form>
             
           </li>
+          <br>
           @empty
               <span class="badge badge-danger">Not categories</span>
      @endforelse

@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
             <ul class=" nav navbar-nav">
-                {{-- <li class="nav-item"><a class="nav-link" href="{{route('posts.index')}}"> Posts </a></li> --}}
+                <li class="nav-item"><a class="nav-link" href="{{route('posts.index')}}"> Posts </a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('categories.index')}}"> Categories </a></li>
             </ul>
       </nav>

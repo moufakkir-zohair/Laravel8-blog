@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('categories','App\Http\Controllers\CategoryController')->except(['show']);
+Route::resource('posts','App\Http\Controllers\PostController');

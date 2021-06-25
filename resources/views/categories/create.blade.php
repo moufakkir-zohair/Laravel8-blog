@@ -8,6 +8,7 @@
             <input  class="form-control"  name="name" id="name" type="text" required>
         </div>
         <br>
+        
         <button  class="btn btn-block btn-primary" type="submit"> Add category</button>
     </form>
 @endsection
