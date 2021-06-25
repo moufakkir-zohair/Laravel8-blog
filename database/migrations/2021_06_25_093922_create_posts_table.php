@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreign('category_id')->references('id')->on('Categories');
             $table->string('title',120);
             $table->text('content');
+            
             $table->timestamps();
         });
     }
