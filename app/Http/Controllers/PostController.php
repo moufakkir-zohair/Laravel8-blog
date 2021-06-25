@@ -18,6 +18,7 @@ class PostController extends Controller
        return view('posts.index',[
            'posts'=> Post::with('category')->get()
        ]);
+       
     // dd(Post::with('category')->get());
     }
 
