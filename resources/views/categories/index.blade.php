@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/layout')
 @section('content')
  <h1>List of categories</h1>   
  <ul class="list-group">
@@ -7,14 +7,12 @@
         <button class="btn btn-primary" type="submit"  > Add category </button>
       </form>
       <br>
+
      @forelse ($categories as $category)
-
           <li class="list-group-item">
-            {{-- <h2><a href="{{route('category.show',['post'=>$post->id])}}">{{$post->title}}</a></h2> --}}
-            <p>{{$category->name}}</p>
-            <em>{{$category->created_at}}</em>
+            <p>category name : {{$category->name}}</p>
+            <em>date : {{$category->created_at}}</em>
             <br>
-
             <form style="display: inline" method="POST" action="{{ route('categories.destroy',['category'=>$category->id]) }}">
                 @csrf
                 @method('DELETE')

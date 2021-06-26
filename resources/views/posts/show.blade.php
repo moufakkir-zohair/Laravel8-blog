@@ -1,7 +1,6 @@
-
-@extends('layout')
+@extends('layouts/layout')
 @section('content')
-            <h2>{{$post->title}}</h2>
-            <p>{{$post->content}}</p>
-            <em>{{$post->created_at->diffForHumans()}}</em>
+            <h1>Detail of post -- {{$post->title}}</h1>   
+            <p>content : {{$post->content}}</p>
+            <em>Added {{$post->created_at->diffForHumans()}}</em>
 @endsection

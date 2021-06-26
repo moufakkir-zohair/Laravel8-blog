@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/layout')
 @section('content')
 <h1>Add post</h1>
     <form method="POST" action="{{route('posts.store')}}">
@@ -15,7 +15,7 @@
         <br>
         <div class="form-group">
             <label for="content">Category</label>
-            <select class="form-select form-select" name="category" aria-label=".form-select-sm example">
+            <select class="form-control" name="category">
                 @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach

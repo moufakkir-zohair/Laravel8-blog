@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,13 +14,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
     public function index()
     {
        return view('posts.index',[
-           'posts'=> Post::with('category')->get()
+           'posts'=> Post::with('category')->with('user')->get()
        ]);
-       
-    // dd(Post::with('category')->get());
+    
     }
 
     /**
@@ -44,10 +50,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
        $category = Category::find($request->category);
+       $user = Auth::user();
        $post = new Post;
        $post->title=$request->title;
        $post->content=$request->content;
-       $post->category()->associate($category)->save();
+       $post->category()->associate($category)->user()->associate($user)->save();
        return redirect('posts');
     }
 

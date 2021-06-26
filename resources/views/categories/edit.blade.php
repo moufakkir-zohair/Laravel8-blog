@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/layout')
 @section('content')
 <h1>Edit category</h1>
     <form method="POST" action="{{route('categories.update',['category'=>$category->id]) }}">

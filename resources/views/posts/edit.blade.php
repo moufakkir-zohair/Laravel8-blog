@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/layout')
 @section('content')
 <h1>Edit post</h1>
     <form method="POST" action="{{route('posts.update',['post'=>$post->id]) }}">
@@ -16,7 +16,7 @@
         <br>
         <div class="form-group">
             <label for="content">Category</label>
-            <select class="form-select form-select" name="category" aria-label=".form-select-sm example">
+            <select class="form-control" name="category" aria-label=".form-select-sm example">
                 @foreach ($categories as $category)
                     @if ($category->id == $post->category_id)
                         <option value="{{$category->id}}" selected>{{$category->name}}</option>
